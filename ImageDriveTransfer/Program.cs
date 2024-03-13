@@ -1,11 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.IO;
+using ImageDriveTransfer;
 using Spire.Pdf;
 
 string rootDirectory = @"C:\Users\polarlights\Desktop\sample-pdf";
 
-await IterateThroughFiles(rootDirectory);
+//await IterateThroughFiles(rootDirectory);
 
 static async Task IterateThroughFiles(string directoryPath)
 {
@@ -45,7 +46,23 @@ static async Task IterateThroughFiles(string directoryPath)
     //}
 }
 
-//// Recursive Sample Function
+// Test FormatDate function
+string testdate = "10th NOV 2009";
+string surveyorsActOnDate = @"(?<=(act on))[a-zA-Z0-9_ ]*";
+string countyReceivedDate = @"(?<=(received))[a-zA-Z0-9_ ]*";
+string countyFiledDate = @"(?<=(filed))[a-zA-Z0-9_ ]*";
+string result = TestDateRegex.FormatDate(testdate.ToLower(), surveyorsActOnDate);
+
+Console.WriteLine("Format date result: " + result);
+
+
+
+
+
+
+
+
+////  =========== Recursive Sample Function  ===========
 //int test = 3;
 
 //printFunc(test);
